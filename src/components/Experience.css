@@ -1,0 +1,33 @@
+.experience {
+  background-color: #ffa300;
+}
+.experience-header {
+  padding-bottom: 30px;
+}
+.experience .list {
+  color: #fff;
+}
+.experience .list-text {
+  color: #000;
+}
+.experience .s-foot {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 0;
+}
+.experience-foot-svg {
+  width: 50%;
+}
+.experience .list-item {
+  width: 50%;
+}
+@media (orientation: landscape) {
+  .experience-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .experience-list-sections {
+    width: 30%;
+  }
+}

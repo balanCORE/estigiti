@@ -1,0 +1,54 @@
+.intro {
+  background-color: #000;
+  padding-top: 100px;
+
+  height: 100vh;
+  min-height: 450px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.intro.lg,
+.intro.xlg {
+  padding-top: 160px;
+}
+
+.intro-top-svg-2 {
+  padding-left: 30px;
+}
+
+.intro .s-main,
+.intro .s-foot {
+  padding-left: 60px;
+}
+
+.intro .s-top {
+  padding-top: 30px;
+}
+
+.motto {
+  color: #ffffff;
+  font-size: 4.2rem;
+  line-height: 5.7rem;
+}
+.intro-p {
+  color: #fff;
+  font-family: Heebo;
+  font-size: 1.6rem;
+
+  line-height: 2.4rem;
+  display: inline-block;
+}
+.intro-p p {
+  font-family: Heebo;
+  color: #ffa300;
+}
+.intro-p span {
+  word-spacing: 0.3rem;
+}
+@media only screen and (max-height: 650px) {
+  .intro {
+    height: 650px;
+  }
+}

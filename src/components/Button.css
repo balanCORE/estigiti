@@ -1,0 +1,35 @@
+.btn {
+  background-color: #fff;
+  margin: 60px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 15px 50px;
+  border: 0.6rem solid #ffa300;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+}
+.btn.xlg::before,
+.btn.lg::before {
+  content: " ";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% + 20px);
+  background: #fff;
+  transition: 0.3s ease-in-out;
+  transform: scaleX(1);
+}
+.btn.lg:hover::before,
+.btn.xlg:hover::before {
+  transform: scaleX(0);
+}
+.btn span {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-family: Heebo;
+  position: relative;
+  z-index: 3;
+}

@@ -1,0 +1,23 @@
+.list-container {
+  margin: 30px 0;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: square;
+  padding-left: 1.9rem;
+}
+.list-title {
+  font-size: 1.8rem;
+  margin: 30px 0 15px 0;
+}
+.list-item {
+  min-width: 60%;
+  font-size: 1.8rem;
+  margin: 8px 0;
+}
+.list-text {
+  font-family: Heebo;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}

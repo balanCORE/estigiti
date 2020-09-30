@@ -1,0 +1,21 @@
+.expertise {
+  background-color: black;
+  color: white;
+}
+.expertise-header {
+  padding: 30px 0;
+}
+.expertise .list {
+  color: #ffa300;
+}
+.expertise .list-text {
+  color: #fff;
+}
+.expertise .s-foot {
+  display: flex;
+  justify-content: flex-end;
+}
+.expertise-foot-svg {
+  width: 33vw;
+  margin-bottom: 30px;
+}
