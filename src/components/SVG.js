@@ -7,7 +7,7 @@ function Two(props) {
       viewBox="0 0 64 5"
       preserveAspectRatio="none"
       height="4rem"
-      width={`${props.width}`}
+      width="100%"
     >
       <path stroke={props.color} d="M0 1 L100 1"></path>
       <path stroke={props.color} d="M0 4 L100 4"></path>

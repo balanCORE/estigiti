@@ -17,8 +17,9 @@ export default function GetInTouch(props) {
 
   const handleSubmit = (e) => {
     setData((prevValue) => ({ ...prevValue, message }));
-
-    e.preventDefault();
+  };
+  const handleData = () => {
+    console.log(data);
   };
 
   return (
@@ -51,6 +52,7 @@ export default function GetInTouch(props) {
               value={message.phone}
               placeholder="Phone"
               onChange={handleInputs}
+              onClick={handleData}
               name="phone"
             ></input>
             <input
@@ -65,9 +67,8 @@ export default function GetInTouch(props) {
               placeholder="Your message"
               onChange={handleInputs}
               name="text"
-            >
-              {message.text}
-            </textarea>
+              value={message.text}
+            ></textarea>
             <div className="policy-accept">
               <input type="checkbox"></input>
               <label>

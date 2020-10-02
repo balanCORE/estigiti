@@ -18,9 +18,6 @@
   color: #ffa300;
 }
 
-.get-in-touch .s-foot {
-  padding-left: 60px;
-}
 .policy-accept {
   display: flex;
   font-size: 1rem;
@@ -52,6 +49,55 @@ form textarea {
 }
 
 .get-in-touch .s-foot {
+  padding-left: 60px;
   padding-top: 0;
   padding-bottom: 30px;
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .get-in-touch .btn {
+    width: 20rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1650px) {
+  .get-in-touch {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .jumbo {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .contact-container {
+    font-size: 2.6rem;
+    line-height: 3.6rem;
+    margin-bottom: 60px;
+  }
+  .form-container {
+    margin-top: -11rem;
+    width: 40vw;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  input[name="name"],
+  input[name="phone"] {
+    width: 47.5%;
+  }
+  input[name="name"] {
+    margin-right: 5%;
+  }
+  .get-in-touch .s-foot {
+    padding-left: 16rem;
+  }
 }

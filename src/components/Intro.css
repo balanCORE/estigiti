@@ -47,8 +47,55 @@
 .intro-p span {
   word-spacing: 0.3rem;
 }
-@media only screen and (max-height: 650px) {
+.intro-foot-svg {
+  display: none;
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .intro-p {
+    padding-bottom: 30px;
+  }
+  .intro-foot-svg {
+    display: block;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1650px) {
   .intro {
-    height: 650px;
+    padding-top: 6rem;
+  }
+
+  .intro .s-top {
+    padding-top: 0;
+  }
+  .intro .s-foot,
+  .intro .s-main {
+    padding-left: 24rem;
+  }
+  .motto {
+    font-size: 6.6rem;
+    line-height: 9rem;
+  }
+  .intro-p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    padding-bottom: 6rem;
+  }
+  .intro-p p {
+  }
+  .intro-p span {
+    word-spacing: 0.3rem;
+  }
+  .intro-top-svg-2 {
+    padding-left: 8rem;
   }
 }

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { MenuOpen, MenuClose } from "./Hamburger";
-import { ReactComponent as Logo } from "../images/logo.svg";
+import logo from "../images/logo.svg";
 import { Two } from "./SVG";
 import { Navbar as NavData } from "./Data";
-import "./Navbar.css";
 import ULlinks from "./ULlinks";
+import "./Navbar.css";
 
-function Navbar(props) {
+function Navbar() {
   const [click, setClick] = useState(true);
 
   const handleClick = () => {
@@ -16,33 +16,18 @@ function Navbar(props) {
     setClick(true);
   };
 
-  const [width, height, size] = props.size;
   return (
-    <div className={`${click ? "navbar" : "navbar active"} ${size}`}>
-      <div className={`joist ${size}`}>
-        <Logo className="logo-svg" />
+    <div className={click ? "navbar" : "navbar active"}>
+      <div className="joist">
+        {/* <Logo className="logo-svg" /> */}
+        <img src={logo} alt="logo" className="logo-svg" />
         {/* RWD */}
-        {size === "s" || size === "m" ? (
-          <div className="menu-icon" onClick={handleClick}>
-            {click ? <MenuOpen /> : <MenuClose />}
-          </div>
-        ) : (
-          <div className="sidebar">
-            <ULlinks
-              // menu-list
-              class="page-list"
-              liArr={NavData.pageLinks}
-              handleClick={closeMenu}
-            />
-            <ULlinks
-              // menu-list
-              class="social-list"
-              liArr={NavData.socialLinks}
-              handleClick={closeMenu}
-            />
-            <div className="nav-video"></div>
-          </div>
-        )}
+        <div className="menu-icon" onClick={handleClick}>
+          {click ? <MenuOpen /> : <MenuClose />}
+        </div>
+        {/* <video autoPlay muted loop id="Video-background">
+          <source src={VideoBackGround} type="video/mp4" />
+        </video> */}
       </div>
       <div className={click ? "nav-menu" : "nav-menu active"}>
         <ULlinks
@@ -59,8 +44,7 @@ function Navbar(props) {
         />
 
         <div className="menu-foot">
-          {/* width -> tenObiekt.innerwidth - paddingi */}
-          <Two color="#ffffff" width={`${width - 120}px`} />
+          <Two color="#ffffff" />
           <p className="privacy-policy">Privacy & Cookies Policy</p>
           <p className="copyrights">©2020 by Estigiti. </p>
         </div>

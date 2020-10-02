@@ -4,7 +4,7 @@ import { Sections } from "./Data";
 import "./Experience.css";
 const data = Sections.Experience.sMain.content;
 
-export default function Experience(props) {
+export default function Experience() {
   return (
     <section className="experience">
       <div className="s-top"></div>

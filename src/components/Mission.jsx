@@ -3,11 +3,10 @@ import { Three } from "./SVG";
 import Button from "./Button";
 import "./Mission.css";
 
-export default function Mission(props) {
+export default function Mission() {
   return (
     <section className="mission">
       <div className="s-top">
-        {/* <ThreeByThree color="#FFA300" /> */}
         <Three color="#FFA300" />
         <Three color="#FFA300" class="mission-top-svg" />
       </div>

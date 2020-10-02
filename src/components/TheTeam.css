@@ -1,6 +1,7 @@
 .the-team {
   background-color: #000000;
   color: #fff;
+  height: auto;
 }
 .team-container {
   display: flex;
@@ -63,5 +64,31 @@
   }
   .team-card {
     width: 30%;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1650px) {
+  .the-team {
+    height: 100vh;
+  }
+  .team-card-section-a {
+    font-size: 2.6rem;
+    line-height: 3.6rem;
+  }
+  .team-card-section-b {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
   }
 }

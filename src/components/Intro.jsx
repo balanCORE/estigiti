@@ -1,10 +1,10 @@
 import React from "react";
-import { Two } from "./SVG";
+import { Three, Two } from "./SVG";
 import "./Intro.css";
 
-export default function Intro(props) {
+export default function Intro() {
   return (
-    <section className={`intro`}>
+    <section className="intro">
       <div className="s-top">
         <Two color="white" class="intro-top-svg-1" width="100%" />
         <Two color="white" class="intro-top-svg-2" width="100%" />
@@ -12,9 +12,6 @@ export default function Intro(props) {
 
       <div className="s-main">
         <p className="motto">
-          {/* width: {width} <br />
-          height: {height} <br />
-          size: {sizem} */}
           Live up to your full potential. Listen. Reflect. Outdo.
         </p>
       </div>
@@ -40,6 +37,7 @@ export default function Intro(props) {
             esperanto
           </p>
         </div>
+        <Three color="white" class="intro-foot-svg" />
       </div>
     </section>
   );
