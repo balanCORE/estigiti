@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MenuOpen, MenuClose } from "./Hamburger";
 import logo from "../images/logo.svg";
+import VideoBackGround from "../video/code_400x750_v1.mp4";
 import { Two } from "./SVG";
 import { Navbar as NavData } from "./Data";
 import ULlinks from "./ULlinks";
@@ -18,6 +19,7 @@ function Navbar() {
 
   return (
     <div className={click ? "navbar" : "navbar active"}>
+      <div className="video-cover"></div>
       <div className="joist">
         {/* <Logo className="logo-svg" /> */}
         <img src={logo} alt="logo" className="logo-svg" />
@@ -25,9 +27,11 @@ function Navbar() {
         <div className="menu-icon" onClick={handleClick}>
           {click ? <MenuOpen /> : <MenuClose />}
         </div>
-        {/* <video autoPlay muted loop id="Video-background">
+      </div>
+      <div className="video-box">
+        <video autoPlay muted loop id="Video-background">
           <source src={VideoBackGround} type="video/mp4" />
-        </video> */}
+        </video>
       </div>
       <div className={click ? "nav-menu" : "nav-menu active"}>
         <ULlinks
