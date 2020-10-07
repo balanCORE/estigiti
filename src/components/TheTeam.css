@@ -46,7 +46,7 @@
   font-family: Heebo;
 }
 .team-card-email {
-  color: #ffa300;
+  color: var(--color-orange);
   margin-top: 16px;
 }
 .team-card-tel {
@@ -81,11 +81,28 @@
 @media only screen and (min-width: 992px) {
   .the-team {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .the-team .s-main {
+    max-height: 60vh;
+  }
+  .the-team-foot-svg {
+    margin-bottom: 0;
+  }
+  .team-card,
+  .photo {
+    width: 17vw;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1650px) {
+  .team-card,
+  .photo {
+    width: 320px;
+  }
   .team-card-section-a {
     font-size: 2.6rem;
     line-height: 3.6rem;

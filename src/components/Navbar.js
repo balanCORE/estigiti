@@ -33,13 +33,7 @@ function Navbar(props) {
         </div>
       </div>
       <div className="video-box">
-        <video
-          autoPlay
-          muted
-          loop
-          id="Video-background"
-          style={{ margin: "0" }}
-        >
+        <video autoPlay muted loop id="Video-background">
           <source src={VideoBackGround} type="video/mp4" />
         </video>
         <video autoPlay muted loop id="Video-background">
