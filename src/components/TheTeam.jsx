@@ -6,7 +6,7 @@ import "./TheTeam.css";
 
 export default function TheTeam(props) {
   return (
-    <section className="the-team">
+    <section className="the-team" ref={props.refer} id="section-5">
       <div className="s-top">
         <Three color="white" />
       </div>

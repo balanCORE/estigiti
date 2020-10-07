@@ -9,11 +9,11 @@
   flex-flow: column nowrap;
   justify-content: space-between;
 }
-.intro.lg,
-.intro.xlg {
-  padding-top: 160px;
-}
 
+.intro .s-top {
+  padding-top: 30px;
+  line-height: 1rem;
+}
 .intro-top-svg-2 {
   padding-left: 30px;
 }
@@ -23,15 +23,12 @@
   padding-left: 60px;
 }
 
-.intro .s-top {
-  padding-top: 30px;
-}
-
 .motto {
   color: #ffffff;
   font-size: 4.2rem;
   line-height: 5.7rem;
 }
+
 .intro-p {
   color: #fff;
   font-family: Heebo;
@@ -60,6 +57,12 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .intro {
+    padding-top: 3rem;
+  }
+  .intro .s-top {
+    padding-top: 0;
+  }
   .intro-p {
     padding-bottom: 30px;
   }
@@ -74,9 +77,6 @@
     padding-top: 6rem;
   }
 
-  .intro .s-top {
-    padding-top: 0;
-  }
   .intro .s-foot,
   .intro .s-main {
     padding-left: 24rem;

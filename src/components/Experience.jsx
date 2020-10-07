@@ -4,9 +4,9 @@ import { Sections } from "./Data";
 import "./Experience.css";
 const data = Sections.Experience.sMain.content;
 
-export default function Experience() {
+export default function Experience(props) {
   return (
-    <section className="experience">
+    <section className="experience" ref={props.refer} id="section-4">
       <div className="s-top"></div>
       <div className="s-main">
         <div className="experience-header header-container">

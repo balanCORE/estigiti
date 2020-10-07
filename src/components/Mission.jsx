@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Three } from "./SVG";
 import Button from "./Button";
 import "./Mission.css";
 
-export default function Mission() {
+export default function Mission(props) {
   return (
-    <section className="mission">
+    <section className="mission" ref={props.refer} id="section-2">
       <div className="s-top">
         <Three color="#FFA300" />
         <Three color="#FFA300" class="mission-top-svg" />

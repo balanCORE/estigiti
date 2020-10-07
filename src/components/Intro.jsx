@@ -1,19 +1,30 @@
 import React from "react";
 import { Three, Two } from "./SVG";
 import "./Intro.css";
+import Typist from "react-typist";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-export default function Intro() {
+export default function Intro(props) {
+  // const motto = createRef();
+  // useEffect(() => {
+  //   gsap.to(motto.current, { color: "#8c0", duration: 3 });
+  // }, [motto]);
+
   return (
-    <section className="intro">
+    <section className="intro" ref={props.refer} id="section-1">
       <div className="s-top">
         <Two color="white" class="intro-top-svg-1" width="100%" />
         <Two color="white" class="intro-top-svg-2" width="100%" />
       </div>
 
       <div className="s-main">
-        <p className="motto">
-          Live up to your full potential. Listen. Reflect. Outdo.
-        </p>
+        <Typist>
+          <p className="motto">
+            Live up to your full potential. Listen. Reflect. Outdo.
+          </p>
+        </Typist>
       </div>
 
       <div className="s-foot">

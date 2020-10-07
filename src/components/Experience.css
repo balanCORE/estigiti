@@ -1,5 +1,6 @@
 .experience {
   background-color: #ffa300;
+  overflow: hidden;
 }
 .experience-header {
   padding-bottom: 30px;

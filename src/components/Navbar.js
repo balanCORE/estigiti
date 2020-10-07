@@ -7,7 +7,7 @@ import { Navbar as NavData } from "./Data";
 import ULlinks from "./ULlinks";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(true);
 
   const handleClick = () => {
@@ -18,7 +18,11 @@ function Navbar() {
   };
 
   return (
-    <div className={click ? "navbar" : "navbar active"}>
+    <div
+      className={click ? "navbar" : "navbar active"}
+      ref={props.refer}
+      id="section-0"
+    >
       <div className="video-cover"></div>
       <div className="joist">
         {/* <Logo className="logo-svg" /> */}
@@ -29,6 +33,18 @@ function Navbar() {
         </div>
       </div>
       <div className="video-box">
+        <video
+          autoPlay
+          muted
+          loop
+          id="Video-background"
+          style={{ margin: "0" }}
+        >
+          <source src={VideoBackGround} type="video/mp4" />
+        </video>
+        <video autoPlay muted loop id="Video-background">
+          <source src={VideoBackGround} type="video/mp4" />
+        </video>
         <video autoPlay muted loop id="Video-background">
           <source src={VideoBackGround} type="video/mp4" />
         </video>

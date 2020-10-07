@@ -1,29 +1,21 @@
 import React, { useState } from "react";
 import { TwoByTwo } from "./SVG";
 import "./GetInTouch.css";
+import Form from "./Form";
+import FormReply from "./FormReply";
 
 export default function GetInTouch(props) {
-  const [message, setMessage] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    text: "",
-  });
-  const [data, setData] = useState();
-  const handleInputs = (e) => {
-    const { name, value } = e.target;
-    setMessage({ ...message, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    setData((prevValue) => ({ ...prevValue, message }));
-  };
-  const handleData = () => {
-    console.log(data);
+  // Rodzic ma otrzymać state z informacją czy "data" zostały pobrane, a dziecko ma je przesłać (callback)
+  const [isDone, setIsDone] = useState(true);
+  const [data, setData] = useState({});
+  const handleChange = (childData, childIsDone) => {
+    setIsDone(!childIsDone);
+    setData(childData);
+    console.log(`childData: ${childData}, childIsDone: ${childIsDone}`);
   };
 
   return (
-    <section className="get-in-touch">
+    <section className="get-in-touch" ref={props.refer} id="section-6">
       <div className="s-top"></div>
       <div className="s-main">
         <div className="get-in-touch-header header-container">
@@ -38,48 +30,7 @@ export default function GetInTouch(props) {
             <p className="email">contact@estigiti.com</p>
             <p className="phone">+48 575 807 907</p>
           </div>
-
-          <form className="form-container">
-            <input
-              type="text"
-              value={message.name}
-              placeholder="Name"
-              onChange={handleInputs}
-              name="name"
-            ></input>
-            <input
-              type="phone"
-              value={message.phone}
-              placeholder="Phone"
-              onChange={handleInputs}
-              onClick={handleData}
-              name="phone"
-            ></input>
-            <input
-              type="email"
-              value={message.email}
-              placeholder="E-mail"
-              onChange={handleInputs}
-              name="email"
-            ></input>
-            <textarea
-              className="form-text"
-              placeholder="Your message"
-              onChange={handleInputs}
-              name="text"
-              value={message.text}
-            ></textarea>
-            <div className="policy-accept">
-              <input type="checkbox"></input>
-              <label>
-                I have read the Privacy Policy and agree to processing of my
-                data.
-              </label>
-            </div>
-            <button type="submit" className="btn" onClick={handleSubmit}>
-              <span>SEND</span>
-            </button>
-          </form>
+          {isDone ? <Form onSubmit={handleChange} /> : <FormReply />}
         </div>
       </div>
 

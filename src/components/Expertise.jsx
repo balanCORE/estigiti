@@ -6,7 +6,7 @@ const data = Sections.Expertise.sMain.content;
 
 export default function Expertise(props) {
   return (
-    <section className="expertise">
+    <section className="expertise" ref={props.refer} id="section-3">
       <div className="s-top">
         <Two color="white" class="expertise-top-svg" width="100%" />
       </div>
