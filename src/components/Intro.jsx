@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Three, Two } from "./SVG";
 import "./Intro.css";
 import Typist from "react-typist";
@@ -7,16 +7,38 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Intro(props) {
-  // const motto = createRef();
-  // useEffect(() => {
-  //   gsap.to(motto.current, { color: "#8c0", duration: 3 });
-  // }, [motto]);
+  const introTopSVG = useRef(null);
+  useEffect(() => {
+    const [svg1, svg2] = introTopSVG.current.children;
+
+    gsap.set(svg1, { transformOrigin: "0 0", autoAlpha: 0 });
+    gsap.set(svg2, { transformOrigin: "0 0", autoAlpha: 0 });
+
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.inOut" },
+    });
+    tl.fromTo(
+      svg1,
+      { x: "-=100%" },
+      { duration: 1, x: "+=100%", autoAlpha: 1 }
+    ).fromTo(svg2, { x: "-=100%" }, { duration: 1, x: "+=100%", autoAlpha: 1 });
+  }, []);
 
   return (
     <section className="intro" ref={props.refer} id="section-1">
-      <div className="s-top">
-        <Two color="white" class="intro-top-svg-1" width="100%" />
-        <Two color="white" class="intro-top-svg-2" width="100%" />
+      <div className="s-top" ref={introTopSVG}>
+        <Two
+          color="white"
+          class="intro-top-svg-1"
+          id="introTopSVG-1"
+          width="100%"
+        />
+        <Two
+          color="white"
+          class="intro-top-svg-2"
+          id="introTopSVG-2"
+          width="100%"
+        />
       </div>
 
       <div className="s-main">

@@ -11,6 +11,8 @@
 }
 
 .intro .s-top {
+  display: flex;
+  flex-direction: column;
   padding-top: 30px;
   line-height: 1rem;
 }
