@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap");
+:root {
+  --color-orange: #ffa300;
+  --color-grey: #989898;
+  --color-red: #c44900;
+  --width-photo: 30em;
+  --mar-ver: 3rem;
+  --mar-hor: 3.2rem;
+  --navbar-width: 21.9rem;
+  --navbar-height: 9.234rem;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Manrope", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h2 {
+  font-size: 3rem;
+  line-height: 4.5rem;
+  margin: var(--mar-ver) 0;
+}
+a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

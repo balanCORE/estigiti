@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Three, Two } from "./SVG";
 import "./Intro.css";
-import Typist from "react-typist";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -15,7 +14,7 @@ export default function Intro(props) {
     gsap.set(svg2, { transformOrigin: "0 0", autoAlpha: 0 });
 
     const tl = gsap.timeline({
-      defaults: { ease: "power3.inOut" },
+      defaults: { ease: "sine.inOut" },
     });
     tl.fromTo(
       svg1,
@@ -42,11 +41,9 @@ export default function Intro(props) {
       </div>
 
       <div className="s-main">
-        <Typist>
-          <p className="motto">
-            Live up to your full potential. Listen. Reflect. Outdo.
-          </p>
-        </Typist>
+        <div className="motto">
+          Live up to your full potential. Listen. Reflect. Outdo.
+        </div>
       </div>
 
       <div className="s-foot">

@@ -1,0 +1,32 @@
+%flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.expertise {
+  color: #ffffff;
+  background-color: #000000;
+  padding: var(--mar-ver) var(--mar-hor);
+  @extend %flex-col;
+  justify-content: space-between;
+  aside {
+    padding: var(--mar-ver) 0;
+  }
+  main {
+    .list-container {
+      padding: var(--mar-ver) 0;
+      padding-left: var(--mar-hor);
+      li {
+        color: var(--color-orange);
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  footer {
+    padding: var(--mar-ver) 0;
+    svg {
+      padding-left: 70%;
+    }
+  }
+}

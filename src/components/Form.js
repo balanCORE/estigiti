@@ -22,8 +22,9 @@ export default function Form(props) {
   };
 
   return (
-    <form onSubmit={props.onSubmit(isDone)} className="form-container">
+    <form onSubmit={props.onSubmit(isDone)}>
       <input
+        className="i-name"
         type="text"
         value={message.name}
         placeholder="Name"
@@ -31,6 +32,7 @@ export default function Form(props) {
         name="name"
       ></input>
       <input
+        className="i-phone"
         type="phone"
         value={message.phone}
         placeholder="Phone"
@@ -38,6 +40,7 @@ export default function Form(props) {
         name="phone"
       ></input>
       <input
+        className="i-email"
         type="email"
         value={message.email}
         placeholder="E-mail"
@@ -45,15 +48,15 @@ export default function Form(props) {
         name="email"
       ></input>
       <textarea
-        className="form-text"
+        className="textarea"
         placeholder="Your message"
         onChange={handleInputs}
         name="text"
         value={message.text}
       ></textarea>
-      <div className="policy-accept">
-        <input type="checkbox"></input>
-        <label>
+      <div className="policy-container">
+        <input className="i-checkbox" type="checkbox"></input>
+        <label className="i-label">
           I have read the Privacy Policy and agree to processing of my data.
         </label>
       </div>

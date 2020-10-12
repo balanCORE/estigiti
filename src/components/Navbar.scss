@@ -1,0 +1,27 @@
+.navbar {
+  height: 0;
+}
+.logo-bg {
+  position: fixed;
+  background-color: #000000;
+  height: var(--navbar-height);
+  width: var(--navbar-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

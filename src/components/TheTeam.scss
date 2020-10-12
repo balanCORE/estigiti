@@ -1,0 +1,44 @@
+.theteam {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0 var(--mar-hor);
+  aside {
+    padding: var(--mar-ver) 0;
+  }
+  main {
+    .team-container {
+      padding-left: var(--mar-hor);
+      .team-card {
+        padding: var(--mar-ver) 0;
+        .photo {
+        }
+        .contact-box {
+          .box-up {
+            line-height: clamp(2.4rem, 3rem, 3.6rem);
+            font-size: clamp(1.8rem, 1.8rem, 2.6rem);
+            margin: 5% 0;
+            .function {
+              font-family: Heebo;
+            }
+          }
+          .box-down {
+            font-size: clamp(1.4rem, 1.4rem, 2rem);
+            line-height: clamp(2.2rem, 2.2rem, 3rem);
+            .email {
+              color: var(--color-orange);
+            }
+          }
+        }
+      }
+    }
+    .photo-overlay {
+      display: none;
+    }
+  }
+  footer {
+    padding: var(--mar-ver) 0;
+    svg {
+      padding-left: 30%;
+    }
+  }
+}

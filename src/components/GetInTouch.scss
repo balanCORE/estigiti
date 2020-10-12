@@ -1,0 +1,53 @@
+.get-in-touch {
+  padding: var(--mar-ver) var(--mar-hor);
+
+  aside {
+  }
+  main {
+    .form-container {
+      padding-left: var(--mar-hor);
+      display: flex;
+      flex-direction: column;
+      .contact-data {
+        font-size: clamp(1.8rem, 1.8rem, 2.4rem);
+        line-height: clamp(2.4rem, 2.4rem, 3rem);
+        padding-bottom: var(--mar-ver);
+        .email {
+          color: var(--color-orange);
+        }
+      }
+      form {
+        padding-right: var(--mar-hor);
+        input,
+        textarea {
+          background-color: #000000;
+          color: #ffffff;
+          padding: calc(var(--mar-ver) / 2) calc(var(--mar-hor) / 2);
+          margin: calc(var(--mar-ver) / 2) 0;
+
+          font-family: Heebo;
+          width: 100%;
+        }
+        .policy-container {
+          display: flex;
+          justify-content: stretch;
+          input {
+            width: auto;
+            padding: 0;
+            margin: auto var(--mar-hor);
+            flex-grow: 1;
+          }
+          label {
+            flex-grow: 10;
+          }
+        }
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+  footer {
+    padding-left: var(--mar-hor);
+  }
+}

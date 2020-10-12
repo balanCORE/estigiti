@@ -5,59 +5,64 @@ function Two(props) {
     <svg
       className={props.class}
       viewBox="0 0 100 4"
-      height="4rem"
+      height="2.8rem"
       width="100%"
       preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <line x1="0" y1="1" x2="100" y2="1" stroke={props.color} />
-      <line x1="0" y1="3" x2="100" y2="3" stroke={props.color} />
+      <line
+        id="line-1"
+        x1="0"
+        y1="0.5"
+        x2="100"
+        y2="0.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        id="line-2"
+        x1="0"
+        y1="3.5"
+        x2="100"
+        y2="3.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
     </svg>
   );
 }
-// function NLinesSVG(props) {
-//   let coordinates = props.coordinates;
-//   if (!coordinates) {
-//     coordinates = [0, 0.5, 100, 0.5];
-//   }
-//   return (
-//     <svg
-//       className={props.class}
-//       viewBox="0 0 100 4" //`0 0 100 ${ n * 2 }`
-//       height="4rem" // n * 2rem
-//       width="100%"
-//       preserveAspectRatio="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       {[].map((line, index) => {
-//         return (
-//           <line
-//             x1={`${line.key}`}
-//             y1="0.5"
-//             x2="100"
-//             y2="0.5"
-//             stroke={props.color}
-//             className={`${props.class}-${index}`}
-//           />
-//         );
-//       })}
-//     </svg>
-//   );
-// }
-
 function TwoByOne(props) {
   return (
     <svg
       className={props.class}
-      viewBox="0 0 100 6"
-      height="6rem"
+      viewBox="0 0 100 7"
+      height="4.9rem"
       width="100%"
       preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <line x1="0" y1="0.5" x2="100" y2="0.5" stroke={props.color} />
-      <line x1="0" y1="2.75" x2="100" y2="2.75" stroke={props.color} />
-      <line x1="25" y1="5" x2="100" y2="5" stroke={props.color} />
+      <line
+        x1="0"
+        y1="0.5"
+        x2="100"
+        y2="0.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        x1="0"
+        y1="3.5"
+        x2="100"
+        y2="3.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        x1="25"
+        y1="6.5"
+        x2="100"
+        y2="6.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
     </svg>
   );
 }
@@ -65,16 +70,46 @@ function TwoByOne(props) {
 function TwoByTwo(props) {
   return (
     <svg
-      className={`${props.class} two-by-two`}
-      viewBox="0 0 64 11"
-      preserveAspectRatio="none"
-      height="8rem"
+      className={props.class}
+      viewBox="0 0 100 10"
+      height="7rem"
       width="100%"
+      preserveAspectRatio="none"
     >
-      <path stroke={props.color} d="M0 1 L100 1"></path>
-      <path stroke={props.color} d="M0 4 L100 4"></path>
-      <path stroke={props.color} d="M6 7 L100 7"></path>
-      <path stroke={props.color} d="M6 10 L100 10"></path>
+      <line
+        x1="0"
+        y1="0.5"
+        x2="100"
+        y2="0.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        x1="0"
+        y1="3.375"
+        x2="100"
+        y2="3.375"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        className="line"
+        x1="22"
+        y1="6.375"
+        x2="100"
+        y2="6.375"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        className="line"
+        x1="22"
+        y1="9.5"
+        x2="100"
+        y2="9.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
     </svg>
   );
 }
@@ -83,15 +118,35 @@ function Three(props) {
   return (
     <svg
       className={props.class}
-      viewBox="0 0 100 6"
-      height="6rem"
+      viewBox="0 0 100 7"
+      height="4.9rem"
       width="100%"
       preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <line x1="0" y1="0.5" x2="100" y2="0.5" stroke={props.color} />
-      <line x1="0" y1="2.75" x2="100" y2="2.75" stroke={props.color} />
-      <line x1="0" y1="5" x2="100" y2="5" stroke={props.color} />
+      <line
+        x1="0"
+        y1="0.5"
+        x2="100"
+        y2="0.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        x1="0"
+        y1="3.5"
+        x2="100"
+        y2="3.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        x1="0"
+        y1="6.5"
+        x2="100"
+        y2="6.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
     </svg>
   );
 }
@@ -100,37 +155,53 @@ function ThreeByTwo(props) {
   return (
     <svg
       className={props.class}
-      viewBox="0 0 100 10"
-      height="10rem"
+      viewBox="0 0 100 13"
+      height="9.1rem"
       width="100%"
       preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <line x1="0" y1="0.5" x2="100" y2="0.5" stroke={props.color} />
-      <line x1="0" y1="2.75" x2="100" y2="2.75" stroke={props.color} />
-      <line x1="0" y1="5" x2="100" y2="5" stroke={props.color} />
-      <line x1="25" y1="7.25" x2="100" y2="7.25" stroke={props.color} />
-      <line x1="25" y1="9.75" x2="100" y2="9.75" stroke={props.color} />
+      <line
+        x1="0"
+        y1="0.5"
+        x2="100"
+        y2="0.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        x1="0"
+        y1="3.5"
+        x2="100"
+        y2="3.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        x1="0"
+        y1="6.5"
+        x2="100"
+        y2="6.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        x1="25"
+        y1="9.5"
+        x2="100"
+        y2="9.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
+      <line
+        x1="25"
+        y1="12.5"
+        x2="100"
+        y2="12.5"
+        stroke={props.color}
+        strokeWidth="1"
+      />
     </svg>
   );
 }
-function ThreeByThree(props) {
-  return (
-    <svg
-      className={props.class}
-      viewBox="0 0 100 12"
-      height="12rem"
-      width="100%"
-      preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <line x1="0" y1="0.5" x2="100" y2="0.5" stroke={props.color} />
-      <line x1="0" y1="2.75" x2="100" y2="2.75" stroke={props.color} />
-      <line x1="0" y1="5" x2="100" y2="5" stroke={props.color} />
-      <line x1="25" y1="7.25" x2="100" y2="7.25" stroke={props.color} />
-      <line x1="25" y1="9.75" x2="100" y2="9.75" stroke={props.color} />
-      <line x1="25" y1="12" x2="100" y2="12" stroke={props.color} />
-    </svg>
-  );
-}
-export { Two, TwoByOne, TwoByTwo, Three, ThreeByTwo, ThreeByThree };
+
+export { Two, TwoByOne, TwoByTwo, Three, ThreeByTwo };

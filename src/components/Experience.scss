@@ -1,0 +1,30 @@
+%flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.experience {
+  background-color: var(--color-orange);
+  padding: 0 var(--mar-hor);
+  aside {
+    padding: var(--mar-ver);
+  }
+  main {
+    .list-card {
+      // height: ;
+      // width: 70%;
+      margin: var(--mar-ver) 0;
+    }
+    li {
+      color: #ffffff;
+      span {
+        color: #000000;
+      }
+    }
+  }
+  footer {
+    padding: var(--mar-ver) 0;
+    svg {
+      padding-left: 50%;
+    }
+  }
+}
