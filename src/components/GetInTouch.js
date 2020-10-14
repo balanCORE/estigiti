@@ -11,7 +11,6 @@ export default function GetInTouch(props) {
   const handleChange = (childData, childIsDone) => {
     setIsDone(!childIsDone);
     setData(childData);
-    console.log(`childData: ${childData}, childIsDone: ${childIsDone}`);
   };
 
   return (

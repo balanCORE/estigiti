@@ -8,7 +8,7 @@ import Mission from "./components/Mission";
 import KnowHow from "./components/KnowHow";
 import Experience from "./components/Experience";
 import TheTeam from "./components/TheTeam";
-// import GetInTouch from "./components/GetInTouch";
+import GetInTouch from "./components/GetInTouch";
 
 function App() {
   //side? width = true: width= false
@@ -16,13 +16,13 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar width={inWidth} />
+        {/* <Navbar width={inWidth} />
         <Intro />
-        <Mission />
+       <Mission /> */}
         <KnowHow />
-        <Experience />
-        <TheTeam />
-        {/* <GetInTouch /> */}
+        {/*<Experience />
+        <TheTeam /> */}
+        <GetInTouch />
       </Router>
     </div>
   );

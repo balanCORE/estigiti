@@ -9,14 +9,13 @@
   text-transform: uppercase;
   color: #000;
   text-decoration: none;
-}
-
-.btn span {
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  font-family: Heebo;
-  position: relative;
-  z-index: 3;
+  span {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-family: Heebo;
+    position: relative;
+    z-index: 3;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

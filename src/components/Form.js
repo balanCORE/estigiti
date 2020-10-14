@@ -7,6 +7,9 @@ export default function Form(props) {
     email: "",
     text: "",
   });
+  //Test
+  const [hi, setHi] = useState("Dear");
+  //test
   const [data, setData] = useState();
   const [isDone, setIsDone] = useState(false);
   const handleInputs = (e) => {
@@ -18,11 +21,15 @@ export default function Form(props) {
     setData((prevValue) => ({ ...prevValue, message }));
     // if input ok than setIsDone(true)
     setIsDone(!isDone);
+    //test
+    setHi(message.name);
+    //test
     e.preventDefault();
   };
 
   return (
     <form onSubmit={props.onSubmit(isDone)}>
+      <p>Hello! {hi}</p>
       <input
         className="i-name"
         type="text"

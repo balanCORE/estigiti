@@ -5,9 +5,9 @@ import "./Lists.scss";
 function ULlinks(props) {
   return (
     <ul className={props.class}>
-      {props.liArr.map((li, index) => {
+      {props.liArr.map((li) => {
         return (
-          <li className="nav-item" key={index}>
+          <li className="nav-item" key={li}>
             <Link
               to={`/${li.pageAnchor}`}
               className="nav-link"
@@ -21,12 +21,12 @@ function ULlinks(props) {
     </ul>
   );
 }
-function List(props) {
+function List({ liArr }) {
   return (
     <ul>
-      {props.liArr.map((li, index) => {
+      {liArr.map((li) => {
         return (
-          <li key={index}>
+          <li key={li}>
             <span>{li}</span>
           </li>
         );

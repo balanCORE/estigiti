@@ -9,7 +9,7 @@ export default function Expertise() {
 
   useEffect(() => {
     const [svgUp] = knowHowSvg.current.children;
-    console.log(svgUp.children);
+
     gsap
       .timeline({ defaults: { ease: "power1.inOut" } })
       .fromTo(
