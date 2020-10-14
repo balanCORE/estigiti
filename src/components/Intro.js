@@ -8,27 +8,19 @@ export default function Intro() {
   const svgs = useRef(null);
 
   useEffect(() => {
-    console.clear();
     const headerArr = typist.current.children;
     const [svgUp, svgDown] = svgs.current.children;
 
-    const [lineUpUp, lineUpDown] = svgUp.children;
-    console.log([svgUp.children]);
-    //TEST
-
-    // gsap.set(lineUpUp, { x: "0" });
+    gsap.set(headerArr, { color: "black" });
     gsap
       .timeline({ defaults: { ease: "power1.inOut" } })
       .fromTo(
         [svgUp.children, svgDown.children],
         { x: "-=100" },
-        { duration: 0.5, x: "+=100", stagger: 0.3 }
-      );
-    //TEST
-    gsap.set(headerArr, { color: "black" });
-    gsap
-      .timeline({ defaults: { ease: "power4.in" } })
-      .to(headerArr, { duration: 2, color: "white", stagger: 0.05 });
+        { duration: 0.5, x: "+=100", stagger: 0.3 },
+        "Start"
+      )
+      .to(headerArr, { duration: 2, color: "white", stagger: 0.05 }, "Start");
   }, []);
 
   return (
@@ -97,7 +89,7 @@ export default function Intro() {
         </h2>
       </main>
       <footer>
-        <p>
+        <div className="intro-todo">
           *estigi {"{vb}"} - to bring into being
           <span>&nbsp;&nbsp;</span>|<span>&nbsp;&nbsp;</span>
           to cause
@@ -111,7 +103,7 @@ export default function Intro() {
             <span>&nbsp;&nbsp;</span>/<span>&nbsp;&nbsp;</span>
             esperanto
           </p>
-        </p>
+        </div>
         <Three color="white" class="intro-foot-svg" />
       </footer>
     </section>

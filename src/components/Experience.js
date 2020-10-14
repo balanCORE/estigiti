@@ -43,8 +43,8 @@ export default function Experience() {
         <div className="list-container">
           {Experience.content.map((item, index) => {
             return (
-              <div className="list-card">
-                <h4 key={index}>{item.title}</h4>
+              <div className="list-card" key={index}>
+                <h4>{item.title}</h4>
                 <List liArr={item.liArr} />
               </div>
             );
