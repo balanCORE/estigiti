@@ -1,52 +1,108 @@
 import React, { useState } from "react";
 
-export default function Form(props) {
-  const [message, setMessage] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    text: "",
-  });
-  const [error, setError] = useState({
-    error: Boolean,
-    problem: String,
-  });
+import _ from "lodash";
 
+export default function Form(props) {
+  const [validation, setValidation] = useState({
+    fields: {
+      fName: "",
+      fPhone: "",
+      fEmail: "",
+      fMessage: "",
+    },
+    errors: {
+      eName: "",
+      ePhone: "",
+      eEmail: "",
+      eMessage: "",
+    },
+    isValid: Boolean,
+  });
+  //
+
+  const errorHandler = (data) => {
+    const {
+      fields: { fName, fPhone, fEmail, fMessage },
+    } = data;
+    !fName &&
+      setValidation((prevValue) => {
+        return {
+          ...prevValue,
+          isValid: false,
+          eName: "*Please enter your name.",
+        };
+      });
+
+    typeof fName !== "undefined" &&
+      (!fName.match(/^[a-zA-Z ]*$/))(
+        setValidation((prevValue) => {
+          return {
+            ...prevValue,
+            isValid: false,
+            eName: "*Please enter alphabet characters only.",
+          };
+        })
+      );
+
+    !fName &&
+      setValidation((prevValue) => {
+        return {
+          ...prevValue,
+          isValid: false,
+          eEmail: "*Please enter your email.",
+        };
+      });
+
+    //regular expression for email validation
+    const eMailPattern =
+      new RegExp(
+        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+      )(typeof fEmail !== "undefined") &&
+      (
+        !eMailPattern.test(fEmail) &&
+        setValidation((prevValue) => {
+          return {
+            ...prevValue,
+            isValid: false,
+            eEmail: "*Please enter a valid email.",
+          };
+        })
+      )(!fPhone) &&
+      setValidation((prevValue) => {
+        return {
+          ...prevValue,
+          isValid: false,
+          ePhone: "*Please enter your phone no.",
+        };
+      })(typeof fPhone !== "undefined") &&
+      (!fPhone.match(/^[0-9]{10}$/))(
+        setValidation((prevValue) => {
+          return {
+            ...prevValue,
+            isValid: false,
+            ePhone: "*Please enter valid phone no.",
+          };
+        })
+      );
+    !fMessage &&
+      setValidation((prevValue) => {
+        return {
+          ...prevValue,
+          isValid: false,
+          eMessage: "*Please write something to us.",
+        };
+      });
+
+    return validation;
+  };
+  //
   const handleInputs = (e) => {
     const { name, value } = e.target;
-
-    switch (name) {
-      case "name":
-        !value
-          ? setError({
-              error: true,
-              problem: `${name} is too short`,
-            })
-          : setMessage({ ...message, [name]: value });
-        break;
-      case "phone":
-        !value
-          ? setError(`${name} is too short`)
-          : _.isNumber(value) && setMessage({ ...message, [name]: value });
-        break;
-      case "email":
-        console.log(`email is ${value}`);
-        setMessage({ ...message, [name]: value });
-
-        break;
-      case "text":
-        value && console.log(` is ${value}`);
-        setMessage({ ...message, [name]: value });
-
-        break;
-      default:
-        console.log("sorry, something went wrong :( ");
-        break;
-    }
+    errorHandler(validation);
   };
   const passData = (e) => {
     e.preventDefault();
-    props.onSubmit(message);
+    props.onSubmit(validation);
   };
 
   return (
@@ -54,7 +110,7 @@ export default function Form(props) {
       <input
         className="i-name"
         type="text"
-        value={message.name}
+        value={validation.fields.name}
         placeholder="Name"
         onChange={handleInputs}
         name="name"
@@ -62,7 +118,7 @@ export default function Form(props) {
       <input
         className="i-phone"
         type="phone"
-        value={message.phone}
+        value={validation.fields.phone}
         placeholder="Phone"
         onChange={handleInputs}
         name="phone"
@@ -70,7 +126,7 @@ export default function Form(props) {
       <input
         className="i-email"
         type="email"
-        value={message.email}
+        value={validation.fields.email}
         placeholder="E-mail"
         onChange={handleInputs}
         name="email"
@@ -80,7 +136,7 @@ export default function Form(props) {
         placeholder="Your message"
         onChange={handleInputs}
         name="text"
-        value={message.text}
+        value={validation.fields.text}
       ></textarea>
       <div className="policy-container">
         <input className="i-checkbox" type="checkbox"></input>

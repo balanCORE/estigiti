@@ -25,7 +25,6 @@ export default function GetInTouch(props) {
             <p className="email">contact@estigiti.com</p>
             <p className="phone">+48 575 807 907</p>
           </div>
-          {name && <p>{`Thank you ${name}! `}</p>}
           <Form onSubmit={handleSubmit} />
         </div>
       </main>
