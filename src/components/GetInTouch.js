@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import { TwoByTwo } from "./SVG";
 import "./GetInTouch.scss";
 import Form from "./Form";
-import FormReply from "./FormReply";
+// import FormReply from "./FormReply";
 
 export default function GetInTouch(props) {
   // Rodzic ma otrzymać state z informacją czy "data" zostały pobrane, a dziecko ma je przesłać (callback)
-  const [isDone, setIsDone] = useState(true);
-  const [data, setData] = useState({});
-  const handleChange = (childData, childIsDone) => {
-    setIsDone(!childIsDone);
-    setData(childData);
+  const [name, setName] = useState("");
+
+  const handleSubmit = ({ name, phone, email, message }) => {
+    setName(name);
   };
 
   return (
@@ -26,7 +25,8 @@ export default function GetInTouch(props) {
             <p className="email">contact@estigiti.com</p>
             <p className="phone">+48 575 807 907</p>
           </div>
-          {isDone ? <Form onSubmit={handleChange} /> : <FormReply />}
+          {name && <p>{`Thank you ${name}! `}</p>}
+          <Form onSubmit={handleSubmit} />
         </div>
       </main>
 

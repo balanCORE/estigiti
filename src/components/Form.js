@@ -7,29 +7,50 @@ export default function Form(props) {
     email: "",
     text: "",
   });
-  //Test
-  const [hi, setHi] = useState("Dear");
-  //test
-  const [data, setData] = useState();
-  const [isDone, setIsDone] = useState(false);
+  const [error, setError] = useState({
+    error: Boolean,
+    problem: String,
+  });
+
   const handleInputs = (e) => {
     const { name, value } = e.target;
-    setMessage({ ...message, [name]: value });
-  };
 
-  const handleSubmit = (e) => {
-    setData((prevValue) => ({ ...prevValue, message }));
-    // if input ok than setIsDone(true)
-    setIsDone(!isDone);
-    //test
-    setHi(message.name);
-    //test
+    switch (name) {
+      case "name":
+        !value
+          ? setError({
+              error: true,
+              problem: `${name} is too short`,
+            })
+          : setMessage({ ...message, [name]: value });
+        break;
+      case "phone":
+        !value
+          ? setError(`${name} is too short`)
+          : _.isNumber(value) && setMessage({ ...message, [name]: value });
+        break;
+      case "email":
+        console.log(`email is ${value}`);
+        setMessage({ ...message, [name]: value });
+
+        break;
+      case "text":
+        value && console.log(` is ${value}`);
+        setMessage({ ...message, [name]: value });
+
+        break;
+      default:
+        console.log("sorry, something went wrong :( ");
+        break;
+    }
+  };
+  const passData = (e) => {
     e.preventDefault();
+    props.onSubmit(message);
   };
 
   return (
-    <form onSubmit={props.onSubmit(isDone)}>
-      <p>Hello! {hi}</p>
+    <form onSubmit={passData}>
       <input
         className="i-name"
         type="text"
@@ -67,7 +88,7 @@ export default function Form(props) {
           I have read the Privacy Policy and agree to processing of my data.
         </label>
       </div>
-      <button className="btn" onClick={handleSubmit}>
+      <button className="btn">
         <span>SEND</span>
       </button>
     </form>
