@@ -2,15 +2,26 @@ import React, { useState } from "react";
 import { TwoByTwo } from "./SVG";
 import "./GetInTouch.scss";
 import Form from "./Form";
-// import FormReply from "./FormReply";
+import emailjs from "emailjs-com";
+import { init } from "emailjs-com";
+import FormReply from "./FormReply";
+init("user_lD3AJ3WidrYeyUdhhhGl6");
 
 export default function GetInTouch(props) {
   // Rodzic ma otrzymać state z informacją czy "data" zostały pobrane, a dziecko ma je przesłać (callback)
-  const [name, setName] = useState("");
+  const [isSend, setIsSend] = useState(false);
 
-  const handleSubmit = ({ name, phone, email, message }) => {
-    setName(name);
-  };
+  function sendEmail() {
+    emailjs.sendForm("gmailTest", "template_ya20qjp", "#myForm").then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        response.status === 200 && setIsSend(!isSend);
+      },
+      (error) => {
+        console.log("FAILED...", error);
+      }
+    );
+  }
 
   return (
     <section className="get-in-touch" ref={props.refer} id="section-6">
@@ -25,7 +36,7 @@ export default function GetInTouch(props) {
             <p className="email">contact@estigiti.com</p>
             <p className="phone">+48 575 807 907</p>
           </div>
-          <Form onSubmit={handleSubmit} />
+          {!isSend ? <Form onSubmit={sendEmail} /> : <FormReply />}
         </div>
       </main>
 

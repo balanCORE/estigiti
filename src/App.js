@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 // , Switch, Route
-import Navbar from "./components/Navbar";
 import "./App.scss";
+import Navbar from "./components/Navbar";
 import Intro from "./components/Intro";
 import Mission from "./components/Mission";
 import KnowHow from "./components/KnowHow";
@@ -16,12 +16,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* <Navbar width={inWidth} />
+        <Navbar width={inWidth} />
         <Intro />
-       <Mission /> */}
+        <Mission />
         <KnowHow />
-        {/*<Experience />
-        <TheTeam /> */}
+        <Experience />
+        <TheTeam />
         <GetInTouch />
       </Router>
     </div>

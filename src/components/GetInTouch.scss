@@ -28,6 +28,20 @@
           font-family: Heebo;
           width: 100%;
         }
+
+        input.error {
+          background-color: var(--color-orange);
+        }
+        textarea.error {
+          background-color: var(--color-orange);
+        }
+        input.error::placeholder {
+          color: #ffffff;
+        }
+        textarea.error::placeholder {
+          color: #ffffff;
+        }
+
         .policy-container {
           display: flex;
           justify-content: stretch;
