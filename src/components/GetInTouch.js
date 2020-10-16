@@ -14,11 +14,13 @@ export default function GetInTouch(props) {
   function sendEmail() {
     emailjs.sendForm("gmailTest", "template_ya20qjp", "#myForm").then(
       (response) => {
-        console.log("SUCCESS!", response.status, response.text);
         response.status === 200 && setIsSend(!isSend);
       },
       (error) => {
-        console.log("FAILED...", error);
+        console.log(
+          "Something went wrong, please refresh the page and try to send a message again",
+          error
+        );
       }
     );
   }
