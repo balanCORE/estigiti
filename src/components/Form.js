@@ -19,19 +19,26 @@ export default function Form(props) {
       />
 
       <input
-        className={`${errors.email ? "i-phone error" : "i-phone"}`}
+        className={`${errors.phone ? "i-phone error" : "i-phone"}`}
         type="phone"
         placeholder={`${errors.phone ? "Pole obligatoryjne" : "Phone"}`}
         name="phone"
-        ref={register({ required: true })}
+        ref={register({ required: true, minLength: 9 })}
       />
 
       <input
         className={`${errors.email ? "i-email error" : "i-email"}`}
-        type="email"
+        type="text"
         placeholder={`${errors.email ? "Pole obligatoryjne" : "E-mail"}`}
         name="email"
-        ref={register({ required: true })}
+        ref={register({
+          required: true,
+          pattern: {
+            // Validation pattern
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+            message: true, // Error message when validation fails.
+          },
+        })}
       />
 
       <input
