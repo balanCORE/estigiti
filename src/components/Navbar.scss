@@ -3,14 +3,11 @@
 }
 .logo-bg {
   position: fixed;
-  background-color: #000000;
-  height: var(--navbar-height);
-  width: var(--navbar-width);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 100;
   svg {
+    position: fixed;
+    left: var(--mar-hor);
+    top: var(--mar-ver);
   }
 }
 

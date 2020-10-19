@@ -3,27 +3,9 @@ import { MenuClose, MenuOpen } from "./Hamburger";
 import { ULlinks } from "./Lists";
 import "./NavTop.scss";
 import { Two } from "./SVG";
+import { Navbar } from "./Data";
 
 export default function NavTop() {
-  // copy&paste to data.js
-  const Navbar = {
-    pageLinks: [
-      { pageName: "Mission", pageAnchor: "" },
-      { pageName: "Expertise", pageAnchor: "" },
-      { pageName: "Experience", pageAnchor: "" },
-      { pageName: "The Team", pageAnchor: "" },
-      { pageName: "Get In Touch", pageAnchor: "" },
-    ],
-    socialLinks: [
-      { pageName: "Facebook", pageAnchor: "" },
-      { pageName: "LinkedIn", pageAnchor: "" },
-      { pageName: "Instagram", pageAnchor: "" },
-      { pageName: "Twitter", pageAnchor: "" },
-      { pageName: "YouTube", pageAnchor: "" },
-    ],
-  };
-  // copy&paste to data.js
-
   const [click, setClick] = useState(true);
   const handleClick = () => {
     setClick(!click);
@@ -41,6 +23,7 @@ export default function NavTop() {
           </div>
           <div className="menu-foot">
             <Two color="#ffffff" />
+            {/* ta stopka musi być oddzielnym elementem bo powtarza się przy get in touch na dole przy desktopach */}
             <p>Privacy & Cookies Policy</p>
             <p>©2020 by Estigiti. </p>
           </div>

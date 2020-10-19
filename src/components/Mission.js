@@ -8,17 +8,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function Mission() {
   gsap.registerPlugin(ScrollTrigger);
   const missionSvg = useRef(null);
-  const main = useRef(null);
+  const mission = useRef(null);
 
   useEffect(() => {
     const [svgUp, svgDown] = missionSvg.current.children;
-    const mainSection = main.current.children;
+    const missionSection = mission.current.children;
     gsap.set([svgUp.children, svgDown.children], {
-      transform: "matrix(1,0,0,0,-100,0)",
-      // x: "-=100",
+      transform: "matrix(1,0,0,1,-100,0)",
+      autoAlpha: 0,
     });
 
-    gsap.to(mainSection, {
+    gsap.to(missionSection, {
       scrollTrigger: {
         trigger: ".mission",
         start: "-30% 50%",
@@ -26,7 +26,7 @@ export default function Mission() {
         onEnter: () => {
           gsap.to([svgUp.children, svgDown.children], {
             transform: "matrix(1,0,0,1,0,0)",
-            // x: "+=100",
+            autoAlpha: 1,
             duration: 0.5,
             stagger: 0.2,
             ease: "power1.inOut",
@@ -36,7 +36,7 @@ export default function Mission() {
     });
   }, []);
   return (
-    <section className="mission" ref={main}>
+    <section className="mission" ref={mission}>
       <aside ref={missionSvg}>
         <Three />
         <Three />

@@ -2,51 +2,78 @@ import React, { useEffect, useRef } from "react";
 import "./KnowHow.scss";
 import { Three, Two } from "./SVG";
 import { List } from "./Lists";
+import { KnowHow } from "./Data";
 import gsap from "gsap/gsap-core";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Expertise() {
+  gsap.registerPlugin(ScrollTrigger);
+  const knowHow = useRef(null);
   const knowHowSvg = useRef(null);
+  const knowHowSvgFooter = useRef(null);
 
   useEffect(() => {
     const [svgUp] = knowHowSvg.current.children;
+    const knowHowSection = knowHow.current.children;
+    const [svgDown] = knowHowSvgFooter.current.children;
+
+    gsap.set([svgUp.children], {
+      transform: "matrix(1,0,0,1,-100,0)",
+      autoAlpha: 0,
+    });
+    gsap.set([svgDown.children], {
+      transform: "matrix(1,0,0,1,-100,0)",
+      autoAlpha: 0,
+    });
 
     gsap
       .timeline({ defaults: { ease: "power1.inOut" } })
-      .fromTo(
-        [svgUp.children],
-        { x: "-=100" },
-        { duration: 0.5, x: "+=100", stagger: 0.3 }
-      );
+      .to(knowHowSection, {
+        scrollTrigger: {
+          trigger: ".know-how",
+          start: "-30% 50%",
+          end: "20% 50% ",
+          onEnter: () => {
+            gsap.to([svgUp.children], {
+              transform: "matrix(1,0,0,1,0,0)",
+              autoAlpha: 1,
+              duration: 0.5,
+              stagger: 0.2,
+              ease: "power1.inOut",
+            });
+          },
+        },
+      })
+      .to(knowHowSection, {
+        scrollTrigger: {
+          trigger: ".know-how",
+          start: "25% 45%",
+          onEnter: () => {
+            gsap.to([svgDown.children], {
+              transform: "matrix(1,0,0,1,0,0)",
+              autoAlpha: 1,
+              duration: 0.5,
+              stagger: 0.2,
+              ease: "power1.inOut",
+            });
+          },
+        },
+      });
   }, []);
-  // copy&pase to data.js
-  console.log("expertise data copy&pase");
-  const Expertise = {
-    content: {
-      title: "Development services",
-      liArr: [
-        "Connected embedded systems & Internet of Things",
-        "Embedded & Edge AI, Computer Vision",
-        "Cloud-native data processing pipelines",
-        "Technology evaluation, PoCs, MVPs, and product development",
-      ],
-    },
-  };
-
-  // copy&pase to data.js
 
   return (
-    <section className="expertise">
+    <section className="know-how" ref={knowHow}>
       <aside ref={knowHowSvg}>
         <Two color="#ffffff" />
       </aside>
       <main>
         <h2>Know-how {"{"}</h2>
         <div className="list-container">
-          <h4>{Expertise.content.title}</h4>
-          <List liArr={Expertise.content.liArr} class="expertise-ul" />
+          <h4>{KnowHow.content.title}</h4>
+          <List liArr={KnowHow.content.contentArr} class="expertise-ul" />
         </div>
       </main>
-      <footer>
+      <footer ref={knowHowSvgFooter}>
         <Three color="#ffffff" />
       </footer>
     </section>

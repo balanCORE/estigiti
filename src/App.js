@@ -21,6 +21,7 @@ function App() {
         <Mission />
         <KnowHow />
         <Experience />
+        {/* width ma dać moliwość najechania na osobę i pokazania w jakich areach jest odpowiedzialny */}
         <TheTeam />
         <GetInTouch />
       </Router>

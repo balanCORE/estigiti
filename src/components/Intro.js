@@ -6,7 +6,7 @@ import { Three, Two } from "./SVG";
 export default function Intro() {
   const typist = useRef(null);
   const svgs = useRef(null);
-
+  // heave to trigger x2 before 100 or have to make a change with onload
   useEffect(() => {
     const headerArr = typist.current.children;
     const [svgUp, svgDown] = svgs.current.children;
@@ -16,8 +16,13 @@ export default function Intro() {
       .timeline({ defaults: { ease: "power1.inOut" } })
       .fromTo(
         [svgUp.children, svgDown.children],
-        { x: "-=100" },
-        { duration: 0.5, x: "+=100", stagger: 0.3 },
+        { transform: "matrix(1,0,0,1,-100,0)", autoAlpha: 0 },
+        {
+          duration: 0.5,
+          transform: "matrix(1,0,0,1,0,0)",
+          autoAlpha: 1,
+          stagger: 0.3,
+        },
         "Start"
       )
       .to(headerArr, { duration: 2, color: "white", stagger: 0.05 }, "Start");

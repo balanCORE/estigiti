@@ -49,98 +49,44 @@ const Navbar = {
   ],
 };
 
-const Sections = {
-  Mission: {
-    sMain: {
-      isMotto: false,
-      motto: "",
-      isHeader: true,
-      header:
-        "From a very first day on the mission to provide the best possible remote team and talent experience to <span>CTOs/VPs of Engineering</span>",
-      isContent: false,
-      content: [],
-      isButton: true,
-      buttonText: "CURIOUS HOW?",
-    },
-  },
-
-  Expertise: {
-    sMain: {
-      isMotto: false,
-      motto: "",
-      isHeader: true,
-      header: "Expertise",
-      isContent: true,
-      content: {
-        title: "Development services",
-        contentArr: [
-          "Connected embedded systems & Internet of Things",
-          "Embedded & Edge AI, Computer Vision",
-          "Cloud-native data processing pipelines",
-          "Technology evaluation, PoCs, MVPs, and product development",
-        ],
-      },
-    },
-  },
-  Experience: {
-    sMain: {
-      isMotto: false,
-      motto: "",
-      isHeader: true,
-      header: "Experience",
-      isContent: true,
-      content: [
-        {
-          title: "Development services",
-          contentArr: ["C", "C++", "Python"],
-        },
-        {
-          title: "COMPUTER VISION AND SMART COMPUTING",
-          contentArr: ["Tensorflow (Lite)", "PyTorch"],
-        },
-        {
-          title: "SERVER-SIDE AND CLOUD SYSTEMS",
-          contentArr: ["C#", "Java", "Scala", "Python"],
-        },
-        {
-          title: "BESPOKE LINUX-BASED SYSTEMS",
-          contentArr: ["Yocto", "Buildroot"],
-        },
-        {
-          title: "REAL-TIME SYSTEMS",
-          contentArr: ["FreeRTOS", "Zephyr"],
-        },
-        {
-          title: "CLOUD ENVIRONMENTS",
-          contentArr: ["AWS", "Microsoft Azure"],
-        },
-      ],
-    },
-  },
-  TheTeam: {
-    sMain: {
-      isMotto: false,
-      motto: "",
-      isHeader: true,
-      header: "The Team {",
-      isContent: false,
-      content: [],
-      isButton: false,
-      buttonText: "",
-    },
-  },
-  GetInTouch: {
-    sMain: {
-      isMotto: false,
-      motto: "",
-      isHeader: true,
-      header: "Experience",
-      isContent: true,
-      content: [],
-      isButton: true,
-      buttonText: "",
-    },
+const KnowHow = {
+  content: {
+    title: "Development services",
+    contentArr: [
+      "Connected embedded systems & Internet of Things",
+      "Embedded & Edge AI, Computer Vision",
+      "Cloud-native data processing pipelines",
+      "Technology evaluation, PoCs, MVPs, and product development",
+    ],
   },
 };
+const Experience = {
+  content: [
+    {
+      title: "Development services",
+      contentArr: ["C", "C++", "Python"],
+    },
+    {
+      title: "COMPUTER VISION AND SMART COMPUTING",
+      contentArr: ["Tensorflow (Lite)", "PyTorch"],
+    },
+    {
+      title: "SERVER-SIDE AND CLOUD SYSTEMS",
+      contentArr: ["C#", "Java", "Scala", "Python"],
+    },
+    {
+      title: "BESPOKE LINUX-BASED SYSTEMS",
+      contentArr: ["Yocto", "Buildroot"],
+    },
+    {
+      title: "REAL-TIME SYSTEMS",
+      contentArr: ["FreeRTOS", "Zephyr"],
+    },
+    {
+      title: "CLOUD ENVIRONMENTS",
+      contentArr: ["AWS", "Microsoft Azure"],
+    },
+  ],
+};
 
-export { Team, Sections, Navbar };
+export { Team, Navbar, KnowHow, Experience };
