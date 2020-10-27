@@ -8,7 +8,6 @@ import FormReply from "./FormReply";
 init("user_lD3AJ3WidrYeyUdhhhGl6");
 
 export default function GetInTouch(props) {
-  // Rodzic ma otrzymać state z informacją czy "data" zostały pobrane, a dziecko ma je przesłać (callback)
   const [isSend, setIsSend] = useState(false);
 
   function sendEmail() {

@@ -24,9 +24,9 @@
           color: #ffffff;
           padding: calc(var(--mar-ver) / 2) calc(var(--mar-hor) / 2);
           margin: calc(var(--mar-ver) / 2) 0;
-
           font-family: Heebo;
           width: 100%;
+          resize: none;
         }
 
         input.error {
@@ -49,10 +49,8 @@
             width: auto;
             padding: 0;
             margin: auto var(--mar-hor);
-            flex-grow: 1;
           }
           label {
-            flex-grow: 10;
           }
         }
         button {
@@ -63,5 +61,46 @@
   }
   footer {
     padding-left: var(--mar-hor);
+  }
+}
+@media only screen and (min-width: 992px) {
+  section.get-in-touch {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .get-in-touch {
+    main {
+      .form-container {
+        flex-direction: row;
+        form {
+          margin-left: var(--mar-hor);
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .i-name,
+          .i-phone {
+            margin-top: 0;
+            width: 47.5%;
+          }
+          .i-message {
+            height: 20vh;
+          }
+          .i-message::placeholder {
+            top: 20px;
+          }
+          .policy-container {
+            width: 100%;
+            input {
+              margin: 0 3%;
+            }
+            label {
+            }
+          }
+          button {
+          }
+        }
+      }
+    }
   }
 }

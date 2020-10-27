@@ -8,12 +8,20 @@
   main {
     .team-container {
       padding-left: var(--mar-hor);
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       .team-card {
-        padding: var(--mar-ver) 0;
+        // padding: var(--mar-ver) 0;
         .photo {
+          width: 20em;
+          img {
+            max-width: 100%;
+          }
         }
         .contact-box {
-          .box-up {
+          .contact-box-up {
             line-height: clamp(2.4rem, 3rem, 3.6rem);
             font-size: clamp(1.8rem, 1.8rem, 2.6rem);
             margin: 5% 0;
@@ -21,7 +29,7 @@
               font-family: Heebo;
             }
           }
-          .box-down {
+          .contact-box-down {
             font-size: clamp(1.4rem, 1.4rem, 2rem);
             line-height: clamp(2.2rem, 2.2rem, 3rem);
             .email {
@@ -36,9 +44,17 @@
     }
   }
   footer {
+    bottom: 0;
     padding: var(--mar-ver) 0;
     svg {
       padding-left: 30%;
     }
+  }
+}
+@media only screen and (min-width: 992px) {
+  section.theteam {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }

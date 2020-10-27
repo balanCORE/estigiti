@@ -18,30 +18,43 @@ export default function TheTeam() {
 
     gsap
       .timeline({ defaults: { ease: "power1.inOut" } })
-      .fromTo(
-        teamSection,
-        {
-          y: "-100",
-          autoAlpha: 0,
-        },
-        {
-          scrollTrigger: {
-            trigger: ".theteam",
-            start: "10% 70%",
-            y: "0",
-            autoAlpha: 1,
-            onEnter: () => {
-              gsap.to(Aside.children, {
-                duration: 0.5,
-                stagger: 0.2,
-                autoAlpha: 1,
-              });
-            },
+      .set(Main, { y: "-100", autoAlpha: 0 })
+      .set(Aside.children, {
+        autoAlpha: 0,
+        transform: "matrix(1,0,0,1,-100,0)",
+      })
+
+      .to(teamSection, {
+        scrollTrigger: {
+          trigger: ".theteam",
+          start: "10% 80%",
+          onEnter: () => {
+            gsap
+              .timeline()
+              .to(
+                Aside.children,
+                {
+                  duration: 0.5,
+                  transform: "matrix(1,0,0,1,0,0)",
+                  stagger: 0.3,
+                  autoAlpha: 1,
+                },
+                "svgAnim"
+              )
+              .to(
+                Main,
+                {
+                  y: "0",
+                  duration: 0.5,
+                  stagger: 0.2,
+                  autoAlpha: 1,
+                },
+                "svgAnim"
+              );
           },
-        }
-      )
-      .fromTo(Aside, {}, { duration: 1 })
-      .fromTo(Main, {}, { duration: 1 });
+        },
+      });
+    // .fromTo(Main, {}, { duration: 1 });
   }, []);
 
   return (
@@ -62,18 +75,18 @@ export default function TheTeam() {
                     <h5 className="area">{person.area}</h5>
                     <ul className="overlay-list">
                       {person.responsibleOf.map((items, index) => {
-                        return <li key={index}>{items}</li>;
+                        return <li key={`${items}-${index}`}>{items}</li>;
                       })}
                     </ul>
                   </div>
                 </div>
 
                 <div className="contact-box">
-                  <div className="box-up">
+                  <div className="contact-box-up">
                     <p className="name">{person.name}</p>
                     <p className="function">{person.function}</p>
                   </div>
-                  <div className="box-down">
+                  <div className="contact-box-down">
                     <p className="email">{person.email}</p>
                     <p className="phone">{person.phone}</p>
                   </div>

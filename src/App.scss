@@ -7,7 +7,8 @@
   --mar-ver: 3rem;
   --mar-hor: 3.2rem;
   --navbar-width: 21.9rem;
-  --navbar-height: 9.234rem;
+  --navbar-height: 9.2rem;
+  --mr-l: 0;
 }
 html {
   font-size: 62.5%;
@@ -26,7 +27,9 @@ h2 {
 a {
   text-decoration: none;
 }
-
+section {
+  margin-left: var(--mr-l);
+}
 @media only screen and (min-width: 600px) {
 }
 
@@ -36,6 +39,10 @@ a {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  section {
+    height: 100vh;
+    min-height: 650px;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */

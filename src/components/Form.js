@@ -47,7 +47,7 @@ export default function Form(props) {
         })}
       />
 
-      <input
+      <textarea
         className={`${errors.message ? "i-message error" : "i-message"}`}
         placeholder={`${
           errors.message ? "Pole obligatoryjne" : "Your message"
@@ -56,13 +56,13 @@ export default function Form(props) {
         ref={register({ required: true })}
       />
       <div className="policy-container">
+        <input
+          className="i-checkbox"
+          type="checkbox"
+          name="checkbox"
+          ref={register({ required: true })}
+        />
         <label className="i-label" forhtml="checkbox">
-          <input
-            className="i-checkbox"
-            type="checkbox"
-            name="checkbox"
-            ref={register({ required: true })}
-          />
           I have read the Privacy Policy and agree to processing of my data.
         </label>
       </div>

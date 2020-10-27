@@ -7,7 +7,7 @@ function ULlinks(props) {
     <ul className={props.class}>
       {props.liArr.map((li) => {
         return (
-          <li className="nav-item" key={li}>
+          <li className="nav-item" key={li.pageName}>
             <Link
               to={`/${li.pageAnchor}`}
               className="nav-link"

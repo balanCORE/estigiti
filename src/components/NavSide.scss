@@ -1,0 +1,50 @@
+.navside {
+  .menu-main {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    margin: auto 0;
+    height: 50vh;
+    margin-top: 25vh;
+    padding-left: var(--mar-ver);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    ul {
+      list-style-type: none;
+      a {
+        // mix-blend-mode: difference;
+        font-size: 3rem;
+        color: #ffffff;
+      }
+    }
+    .social-links a {
+      font-family: Heebo;
+      font-size: 2rem;
+    }
+  }
+  .video-cover {
+    position: sticky;
+    top: 0;
+    width: var(--mr-l);
+    // mix-blend-mode: difference;
+    height: 85vh;
+    background-color: black;
+  }
+  .video-box {
+    background-color: var(--color-orange);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: var(--mr-l);
+    .logo-bg {
+      height: 100px;
+      width: var(--mr-l);
+      background-color: black;
+    }
+  }
+}

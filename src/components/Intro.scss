@@ -8,7 +8,7 @@
   padding-top: var(--navbar-height);
   padding-bottom: var(--mar-ver);
   height: 100vh;
-  width: 100%;
+  width: auto;
   overflow: hidden;
   background-color: #000000;
   @extend %flex-col;
