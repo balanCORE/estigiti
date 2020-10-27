@@ -11,7 +11,7 @@ export default function Navbar({ width }) {
         <Logo />
       </div>
       {/* RWD  */}
-      <div
+      {/* <div
         className="width"
         style={{
           height: "2rem",
@@ -25,7 +25,7 @@ export default function Navbar({ width }) {
         }}
       >
         <p style={{ color: "white", fontSize: "3rem" }}>width: {width}</p>
-      </div>
+      </div> */}
       {/* RWD */}
 
       {width < 992 ? <NavTop /> : <NavSide />}
